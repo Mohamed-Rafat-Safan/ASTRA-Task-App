@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.home.HomePostFragment">
+
+    <TextView
+        android:id="@+id/tv_postTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_weight="3"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="Posts"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_24ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_addPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_8sdp"
+        android:drawableStart="@drawable/ic_add_circle_outline"
+        android:drawablePadding="@dimen/_4sdp"
+        android:drawableTint="@color/primary"
+        android:fontFamily="@font/medium"
+        android:text="Add Post"
+        android:textColor="@color/primary"
+        android:textSize="@dimen/_12ssp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_postTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_postTitle" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_posts"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_postTitle"
+        tools:listitem="@layout/item_post" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_home"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="@dimen/_8sdp"
+        android:indeterminateTint="@color/primary"
+        android:padding="@dimen/_10sdp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

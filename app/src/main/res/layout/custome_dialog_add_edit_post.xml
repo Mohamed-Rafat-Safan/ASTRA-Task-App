@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tvDialogTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/medium"
+            android:text="Create New Post"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_closeDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_close"
+            app:tint="@color/dark_gray" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="@dimen/_16sdp"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_16sdp">
+
+        <TextView
+            android:id="@+id/tv_postPhotoHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/medium"
+            android:text="Photo"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_selectPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:background="@drawable/dotted_border"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <LinearLayout
+                android:id="@+id/layout_selectPhotoTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="@dimen/_26sdp"
+                    android:layout_height="@dimen/_26sdp"
+                    android:src="@drawable/gallery"
+                    app:tint="@color/gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Select photo from gallery"
+                    android:textColor="@color/gray"
+                    android:textSize="@dimen/_10ssp" />
+            </LinearLayout>
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_postPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bg"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/mini_circleImageShape" />
+
+            <TextView
+                android:id="@+id/tv_editPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:background="@drawable/bg_edit_post_image"
+                android:drawableStart="@drawable/ic_edit"
+                android:drawablePadding="@dimen/_6sdp"
+                android:drawableTint="@color/black"
+                android:padding="@dimen/_6sdp"
+                android:text="Edit"
+                android:textSize="@dimen/_14ssp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/tv_postTitleHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/medium"
+            android:text="Title"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/postTitle"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:textColorHint="@color/gray"
+            app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+            app:boxCornerRadiusTopStart="@dimen/_8sdp"
+            app:boxStrokeColor="@color/gray"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_offerTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_postTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Enter Post Title"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/_14ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/tv_postMessageHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:fontFamily="@font/medium"
+            android:text="Message"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvDialogTitle" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/postMessage"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:textColorHint="@color/gray"
+            app:boxCornerRadiusBottomEnd="@dimen/_8sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_8sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_8sdp"
+            app:boxCornerRadiusTopStart="@dimen/_8sdp"
+            app:boxStrokeColor="@color/gray"
+            app:boxStrokeWidthFocused="1dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_offerDescTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_postMessage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="top|start"
+                android:hint="What's on your mind?"
+                android:inputType="textMultiLine"
+                android:maxLines="3"
+                android:minLines="3"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@null"
+                android:textSize="@dimen/_14ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancelPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/white"
+                android:padding="@dimen/_8sdp"
+                android:text="Cancel"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp"
+                app:cornerRadius="@dimen/_6sdp"
+                app:strokeColor="@color/light_gray"
+                app:strokeWidth="1dp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginHorizontal="@dimen/_6sdp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/black"
+                android:padding="@dimen/_8sdp"
+                android:text="Post"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_16ssp"
+                app:cornerRadius="@dimen/_6sdp" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

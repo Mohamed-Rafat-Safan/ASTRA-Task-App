@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homePostFragment">
+
+    <fragment
+        android:id="@+id/homePostFragment"
+        android:name="com.example.astrataskapp.presentation.home.HomePostFragment"
+        android:label="fragment_home_post"
+        tools:layout="@layout/fragment_home_post" >
+        <action
+            android:id="@+id/action_homePostFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.example.astrataskapp.presentation.details.PostDetailsFragment"
+        android:label="fragment_post_details"
+        tools:layout="@layout/fragment_post_details" >
+        <action
+            android:id="@+id/action_postDetailsFragment_to_homePostFragment"
+            app:destination="@id/homePostFragment" />
+        <argument
+            android:name="postId"
+            app:argType="integer" />
+    </fragment>
+</navigation>
