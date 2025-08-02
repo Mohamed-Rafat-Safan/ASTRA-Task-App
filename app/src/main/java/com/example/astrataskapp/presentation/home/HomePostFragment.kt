@@ -103,7 +103,7 @@ class HomePostFragment : Fragment(), PostAdapter.PostOnClickListener {
 
                 is Resource.Success -> {
                     binding.progressBarHome.visibility = View.GONE
-                    val listPosts = resource.data
+                    val listPosts = resource.data.reversed()
 
                     Toast.makeText(
                         requireContext(),
